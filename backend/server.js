@@ -12,15 +12,20 @@ import announcementRoutes from './routes/announcements.js';
 
 config();
 const app = express();
-app.use(cors({
-  origin: [
-    "http://localhost:5173", 
-    "https://your-frontend-domain.vercel.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
-}));
+const allowedOrigins = [
+  "http://localhost:5173", // local frontend dev
+  "https://your-frontend-domain.com" // production frontend (once deployed)
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
+
 app.use(json());
 app.use("/api/admin-dashboard", adminDashboardRoutes);
 app.use('/api/announcements', announcementRoutes);
