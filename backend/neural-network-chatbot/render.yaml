@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ai-grievance-chatbot
+    env: python
+    branch: main
+    plan: free
+    pythonVersion: 3.11.9
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: python chatbot.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    autoDeploy: true
