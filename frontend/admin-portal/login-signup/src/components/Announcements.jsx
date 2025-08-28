@@ -148,7 +148,12 @@ function Announcements({ userRole }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newAnnouncement)});
   
-      const savedAnnouncement = await response.json();
+      let savedAnnouncement = await response.json();
+        savedAnnouncement = {
+      id: savedAnnouncement.id || savedAnnouncement._id || Date.now(), 
+      ...savedAnnouncement
+    };
+
       setAnnouncements(prev => [savedAnnouncement, ...prev]);
       setShowNewAnnouncementForm(false);
     } catch (err) {

@@ -1,110 +1,72 @@
 [
-    {
-      "title": "Water Supply Interruption Notice",
-      "content": "Due to essential maintenance work on the main water pipeline, water supply will be disrupted in Sector 15 and Sector 16 from 9:00 AM to 6:00 PM on June 3, 2025.",
-      "type": "general",
-      "audience": "citizen",
-      "expiryDate": "2025-06-04T00:00:00Z",
-      "isPinned": true,
-      "distributionChannels": {
-        "email": true,
-        "webApp": true,
-        "sms": false
-      },
-      "attachments": [],
-      "viewCount": 123,
-      "acknowledgments": 20,
-      "author": "Rajesh Kumar",
-      "authorRole": "Executive Engineer",
-      "department": "Water Supply Department",
-      "timestamp": "2025-06-01T09:00:00Z"
+  {
+    "id": "68b053d15b38fa3b29a80d93",
+    "title": "Air Quality Alert",
+    "content": "Air pollution levels have reached hazardous limits in several parts of the city. Citizens are advised to limit outdoor activities and use masks when outside.",
+    "type": "urgent",
+    "audience": "public",
+    "expiryDate": "2025-10-15T00:00:00Z",
+    "isPinned": true,
+    "distributionChannels": {
+      "email": true,
+      "webApp": true,
+      "sms": true
     },
-    {
-      "title": "Emergency Flood Alert",
-      "content": "The river water level has crossed the danger mark in the eastern region. Citizens are advised to evacuate low-lying areas immediately and follow emergency protocols.",
-      "type": "urgent",
-      "audience": "public",
-      "expiryDate": "2025-06-02T00:00:00Z",
-      "isPinned": true,
-      "distributionChannels": {
-        "email": true,
-        "webApp": true,
-        "sms": true
-      },
-      "attachments": [
-        {
-          "name": "evacuation_map.pdf",
-          "type": "application/pdf",
-          "size": 456789,
-          "url": "https://govportal.example.com/files/evacuation_map.pdf"
-        }
-      ],
-      "viewCount": 546,
-      "acknowledgments": 213,
-      "author": "Anita Sharma",
-      "authorRole": "District Collector",
-      "department": "Disaster Management Authority",
-      "timestamp": "2025-06-01T05:30:00Z"
+    "attachments": [],
+    "viewCount": 326,
+    "acknowledgments": 105,
+    "author": "Dr. Meera Joshi",
+    "authorRole": "Environmental Officer",
+    "department": "Pollution Control Board",
+    "timestamp": "2025-10-10T09:00:00Z"
+  },
+  {
+    "id": "68b054ab5b38fa3b29a80d94",
+    "title": "Public Health Vaccination Drive",
+    "content": "A free vaccination drive will be conducted in community centers across Ward 7 and Ward 8 on December 12, 2025. Citizens are encouraged to participate.",
+    "type": "general",
+    "audience": "citizen",
+    "expiryDate": "2025-12-20T00:00:00Z",
+    "isPinned": false,
+    "distributionChannels": {
+      "email": true,
+      "webApp": true,
+      "sms": false
     },
-    {
-      "title": "Free Vaccination Camp",
-      "content": "A free vaccination camp will be held at Community Health Center, Ward 12 on June 5th from 10 AM to 4 PM. Citizens are encouraged to attend.",
-      "type": "general",
-      "audience": "citizen",
-      "expiryDate": "2025-06-06T00:00:00Z",
-      "isPinned": false,
-      "distributionChannels": {
-        "email": false,
-        "webApp": true,
-        "sms": true
-      },
-      "attachments": [],
-      "viewCount": 88,
-      "acknowledgments": 30,
-      "author": "Dr. Seema Patil",
-      "authorRole": "Chief Medical Officer",
-      "department": "Health and Family Welfare",
-      "timestamp": "2025-05-31T14:00:00Z"
+    "attachments": [
+      {
+        "name": "vaccination_schedule.pdf",
+        "type": "application/pdf",
+        "size": 92000,
+        "url": "https://govportal.example.com/files/vaccination_schedule.pdf"
+      }
+    ],
+    "viewCount": 210,
+    "acknowledgments": 78,
+    "author": "Dr. Arvind Nair",
+    "authorRole": "Chief Medical Officer",
+    "department": "Health Department",
+    "timestamp": "2025-12-05T11:45:00Z"
+  },
+  {
+    "id": "68b0556f5b38fa3b29a80d95",
+    "title": "Winter Shelter Availability",
+    "content": "Temporary winter shelters have been opened for homeless citizens due to extreme cold weather. Locations are listed on the municipal website.",
+    "type": "general",
+    "audience": "public",
+    "expiryDate": "2025-12-31T00:00:00Z",
+    "isPinned": true,
+    "distributionChannels": {
+      "email": false,
+      "webApp": true,
+      "sms": true
     },
-    {
-      "title": "Electricity Shutdown in Zone B",
-      "content": "Power supply will be interrupted in Zone B from 11 PM to 3 AM on June 2nd for urgent line repairs. Please take necessary precautions.",
-      "type": "urgent",
-      "audience": "citizen",
-      "expiryDate": "2025-06-03T00:00:00Z",
-      "isPinned": false,
-      "distributionChannels": {
-        "email": true,
-        "webApp": true,
-        "sms": true
-      },
-      "attachments": [],
-      "viewCount": 193,
-      "acknowledgments": 56,
-      "author": "Vikram Desai",
-      "authorRole": "Power Supply Manager",
-      "department": "Electricity Board",
-      "timestamp": "2025-06-01T08:45:00Z"
-    },
-    {
-      "title": "Garbage Collection Delay",
-      "content": "Municipal garbage collection in Sectors 4–6 will be delayed by one day due to a worker strike. Regular collection will resume on June 4.",
-      "type": "general",
-      "audience": "citizen",
-      "expiryDate": "2025-06-05T00:00:00Z",
-      "isPinned": false,
-      "distributionChannels": {
-        "email": false,
-        "webApp": true,
-        "sms": false
-      },
-      "attachments": [],
-      "viewCount": 72,
-      "acknowledgments": 12,
-      "author": "Meera Joshi",
-      "authorRole": "Municipal Officer",
-      "department": "Sanitation Department",
-      "timestamp": "2025-06-01T11:20:00Z"
-    }
-  ]
-  
+    "attachments": [],
+    "viewCount": 132,
+    "acknowledgments": 54,
+    "author": "Sunil Rathore",
+    "authorRole": "Welfare Officer",
+    "department": "Social Welfare Department",
+    "timestamp": "2025-12-20T07:30:00Z"
+  }
+]
