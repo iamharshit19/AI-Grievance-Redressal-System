@@ -15,8 +15,8 @@ const app = express();
 const allowedOrigins = [
     "http://localhost:5174", 
   "http://localhost:5173", 
-  "https://grievance-citizen-portal.vercel.app/",
-  "https://admin-grievance-redressal-system.vercel.app/"
+  "https://grievance-citizen-portal.vercel.app",
+  "https://admin-grievance-redressal-system.vercel.app"
 ];
 
 app.use(
