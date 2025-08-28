@@ -1,4 +1,4 @@
-# chatbot_api.py
+
 import random
 import json
 import numpy as np
@@ -15,7 +15,7 @@ nltk.download('punkt')
 nltk.download('wordnet')
 
 app = Flask(__name__)
-CORS(app)  # Allow requests from your React frontend
+CORS(app) 
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
