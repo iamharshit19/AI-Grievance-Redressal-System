@@ -22,20 +22,19 @@ function Statistics() {
   const [departmentData, setDepartmentData] = useState([]);
 
   useEffect(() => {
-    fetch(`${API}api/grievance/stats`)
+    fetch(`${API}/api/grievance/stats`)
       .then((res) => res.json())
       .then((stats) => {
-             const resolvedCount =
-          stats.statusCounts.find((s) => s._id === "Resolved")?.count || 0;
-        const processingCount =
-          stats.statusCounts.find((s) => s._id === "Processing")?.count || 0;
-        const rejectedCount =
-          stats.statusCounts.find((s) => s._id === "Rejected")?.count || 0;
+            const resolvedCount =
+  stats.statusCounts.find((s) => s._id === "Resolved")?.count || 0;
 
-        setStatusData([
-          { name: "Resolved", value: resolvedCount },
-          { name: "Unresolved", value: processingCount + rejectedCount },
-        ]);
+const unresolvedCount =
+  stats.statusCounts.find((s) => ["Processing", "Rejected", "Pending"].includes(s._id))?.count || 0;
+
+setStatusData([
+  { name: "Resolved", value: resolvedCount },
+  { name: "Unresolved", value: unresolvedCount },
+]);
 
         const departmentFormatted = stats.departmentCounts.map((dept) => ({
           name: dept._id,
