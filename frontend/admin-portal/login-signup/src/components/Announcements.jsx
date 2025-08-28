@@ -11,6 +11,7 @@ import {
   History
 } from 'lucide-react';
 import AnnouncementForm from './AnnouncementForm';
+const API = import.meta.env.VITE_API_URL;
 
 function Announcements({ userRole }) {
   const getTypeIcon = (type) => {
@@ -104,7 +105,7 @@ function Announcements({ userRole }) {
     { id: 'history', label: 'History', icon: History }
   ];
 
-  // Announcement Types & Audiences Configuration
+ 
   const announcementTypes = [
     { id: 'urgent', label: 'Urgent', icon: AlertTriangle, color: 'text-red-500' },
     { id: 'general', label: 'General', icon: Bell, color: 'text-blue-500' },
@@ -118,7 +119,6 @@ function Announcements({ userRole }) {
     { id: 'citizen', label: 'Citizens Only', icon: Users, color: 'text-green-500' }
   ];
 
-  // Handle Media Upload
   const handleMediaUpload = (files) => {
     const newFiles = Array.from(files).map(file => ({
       name: file.name,
@@ -143,7 +143,7 @@ function Announcements({ userRole }) {
   };
   const handlePostAnnouncement = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/announcements', {   
+      const response = await fetch(`${API}/api/announcements`, {   
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newAnnouncement)});
@@ -164,12 +164,12 @@ function Announcements({ userRole }) {
   
   const AnnouncementsList = () => (
     <div className="space-y-6">
-      {/* Pinned Announcements */}
+  
       {announcements.filter(a => a.isPinned).map(announcement => (
         <AnnouncementCard key={announcement.id} announcement={announcement} />
       ))}
       
-      {/* Regular Announcements */}
+
       {announcements.filter(a => !a.isPinned).map(announcement => (
         <AnnouncementCard key={announcement.id} announcement={announcement} />
       ))}
@@ -254,7 +254,7 @@ function Announcements({ userRole }) {
   useEffect(() => {
     const fetchAnnouncements = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/announcements');
+        const response = await fetch(`${API}/api/announcements`);
         const data = await response.json();
         setAnnouncements(data);
       } catch (error) {

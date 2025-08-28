@@ -1,4 +1,6 @@
 import { useState } from "react";
+const API = import.meta.env.VITE_API_URL;
+
 
 function TrackGrievance() {
   const [inputId, setInputId] = useState("");
@@ -10,7 +12,7 @@ function TrackGrievance() {
     setGrievance(null);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/grievance/track/${inputId}`);
+      const response = await fetch(`${API}/api/grievance/track/${inputId}`);
       const data = await response.json();
 
       if (response.ok) {

@@ -7,7 +7,7 @@ function Login({ setAuthenticated }) {
   const [department, setDepartment] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+const API = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
 
   const roles = [
@@ -21,7 +21,7 @@ function Login({ setAuthenticated }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/admin/login", {
+      const response = await axios.post(`${API}/api/admin/login`, {
         email,
         password,
         role,
@@ -33,7 +33,7 @@ function Login({ setAuthenticated }) {
         localStorage.setItem("isAuthenticated", "true");
         alert(response.data.message || "Login Successful");
         try {
-          // check if this line is causing any error
+          
           navigate("/admin/dashboard");
         } catch (navError) {
           console.error("Navigation error:", navError);

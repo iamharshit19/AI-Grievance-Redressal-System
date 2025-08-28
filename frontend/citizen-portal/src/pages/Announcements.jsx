@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+const API = import.meta.env.VITE_API_URL;
+
 
 function Announcements() {
   const [announcements, setAnnouncements] = useState([]);
@@ -7,7 +9,7 @@ function Announcements() {
   useEffect(() => {
     const fetchAnnouncements = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/announcements');
+        const res = await fetch(`${API}/api/announcements`);
         const data = await res.json();
         setAnnouncements(data);
       } catch (err) {

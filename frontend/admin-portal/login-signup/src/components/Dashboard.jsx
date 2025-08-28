@@ -16,7 +16,7 @@ import {
 import axios from "axios";
 import GrievancesDashboard from "./GrievancesDashboard";
 import Announcements from "./Announcements";
-
+const API = import.meta.env.VITE_API_URL;
 function Dashboard() {
   const navigate = useNavigate();
 
@@ -43,7 +43,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const statsRes = await axios.get("http://localhost:5000/api/admin-dashboard/stats");
+        const statsRes = await axios.get(`${API}/api/admin-dashboard/stats`);
         setStats(statsRes.data);
       } catch (err) {
         console.error("Error fetching stats", err);
@@ -52,7 +52,7 @@ function Dashboard() {
 
     const fetchMonthly = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin-dashboard/progress/monthly");
+        const res = await axios.get(`${API}/api/admin-dashboard/progress/monthly`);
         setMonthlyProgress(res.data);
       } catch (err) {
         console.error("Error fetching monthly progress", err);
@@ -61,7 +61,7 @@ function Dashboard() {
 
     const fetchAlerts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin-dashboard/alerts");
+        const res = await axios.get(`${API}/api/admin-dashboard/alerts`);
         setAlerts(res.data);
       } catch (err) {
         console.error("Error fetching alerts", err);
@@ -70,7 +70,7 @@ function Dashboard() {
 
     const fetchTasks = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin-dashboard/tasks");
+        const res = await axios.get(`${API}/api/admin-dashboard/tasks`);
         setTasks(res.data);
       } catch (err) {
         console.error("Error fetching tasks", err);
@@ -91,9 +91,9 @@ function Dashboard() {
   return (
     <>
       <div className="min-h-screen bg-[#f6f7fb] p-6">
-        {/* Header */}
+        
         <header className="flex justify-between items-center mb-6">
-  {/* Left: Navigation buttons */}
+ 
   <div className="flex items-center gap-5 ">
     <Link to="/admin/dashboard/Grievances">
       <button className="px-4 my-4 ml-1 sm:my-5 py-2 sm:py-4 text-sm rounded-lg font-semibold text-white bg-black">
@@ -107,7 +107,7 @@ function Dashboard() {
     </Link>
   </div>
 
-  {/* Right: Logout button */}
+
   <div>
     <button
       className="px-4 my-4 sm:my-5 py-2 sm:py-4 text-sm rounded-lg font-semibold text-white bg-black mr-1"
@@ -119,7 +119,6 @@ function Dashboard() {
 </header>
 
 
-        {/* Welcome Section */}
         <section className="bg-gray-900 text-white p-6 rounded-xl shadow mb-6">
           <div className="text-xl font-bold">Welcome back, Admin</div>
           <p className="text-sm mt-1">Here's what's happening in your jurisdiction today</p>
@@ -145,7 +144,7 @@ function Dashboard() {
           </div>
         </section>
 
-        {/* Stats Cards */}
+   
         <section className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <div className="bg-blue-100 p-6 rounded-lg text-center shadow">
             <h3 className="text-xl font-bold">{stats.total}</h3>
@@ -169,7 +168,7 @@ function Dashboard() {
   <h3 className="font-semibold text-lg mb-4">Monthly Overview</h3>
 
   <div className="flex flex-col md:flex-row gap-6 justify-between">
-    {/* Bar Chart */}
+  
     <div className="w-full md:w-2/3 h-[300px]">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={monthlyProgress.length ? monthlyProgress : [{ name: "No data", total: 0, resolved: 0 }]} barSize={25}>

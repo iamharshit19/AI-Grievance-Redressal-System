@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import '../index.css'
+const API = import.meta.env.VITE_API_URL;
 function Signup() {
   const [form, setForm] = useState({ name: "", email: "", password: "", role: "", department: ""});
   const [message, setMessage] = useState("");
@@ -20,7 +21,7 @@ function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/admin/signup", form);
+      await axios.post(`${API}/api/admin/signup`, form);
       setMessage("Signup successful! Redirecting to login...");
       setTimeout(() => navigate("/admin/login"), 1500);
     } catch (err) {

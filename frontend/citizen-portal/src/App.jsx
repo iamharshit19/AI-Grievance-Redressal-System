@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 function App() {
   const location = useLocation();
-  const [showLocalForm, setShowLocalForm] = useState(false); // State to control form visibility
+  const [showLocalForm, setShowLocalForm] = useState(false); 
 
   return (
     <div className="bg-black min-h-screen flex flex-col">
@@ -19,7 +19,7 @@ function App() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`relative flex-grow pb-24 md:pb-32`} // Added bottom padding
+        className={`relative flex-grow pb-24 md:pb-32`} 
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#0B2447]/90 to-black/90 z-10" />
 

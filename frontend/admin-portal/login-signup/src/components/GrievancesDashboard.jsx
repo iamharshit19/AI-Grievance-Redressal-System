@@ -3,14 +3,14 @@ import ResolutionTimeline from './ResolutionTimeline';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import GrievanceDetails from './GrievanceDetail'; 
-
+const API = import.meta.env.VITE_API_URL;
 const GrievancesDashboard = () => {
   const [grievances, setGrievances] = useState([]);
   const [stats, setStats] = useState({ total: 0, pending: 0, inProgress: 0, resolved: 0 });
   const [selectedGrievance, setSelectedGrievance] = useState(null); 
   const fetchGrievances = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/admin-dashboard/grievances');
+      const res = await axios.get(`${API}/api/admin-dashboard/grievances`);
       console.log("Fetched grievances:", res.data); 
       setGrievances(res.data);
     } catch (err) {
@@ -21,7 +21,7 @@ const GrievancesDashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/admin-dashboard/stats');
+      const res = await axios.get(`${API}/api/admin-dashboard/stats`);
       setStats(res.data);
     } catch (err) {
       console.error('Error fetching stats:', err);
@@ -35,7 +35,7 @@ const GrievancesDashboard = () => {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/api/admin-dashboard/grievances/${id}/status`, { status: newStatus });
+      await axios.put(`${API}/api/admin-dashboard/grievances/${id}/status`, { status: newStatus });
       setGrievances((prev) =>
         prev.map((g) => (g._id === id ? { ...g, status: newStatus } : g))
       );

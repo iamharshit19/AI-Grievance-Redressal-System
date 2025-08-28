@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+const API = import.meta.env.VITE_API_URL;
+
+
 
 function GrievanceForm() {
   const [name, setName] = useState("");
@@ -14,7 +17,7 @@ function GrievanceForm() {
   useEffect(() => {
     const fetchGrievances = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/admin-dashboard/grievances");
+        const res = await fetch(`${API}/api/admin-dashboard/grievances`);
         if (res.ok) {
           const data = await res.json();
           setGrievances(data);
@@ -59,7 +62,7 @@ function GrievanceForm() {
     const grievance = { name, email, message, department, code, address };
 
     try {
-      const response = await fetch("http://localhost:5000/api/grievance/submit", {
+      const response = await fetch(`${API}/api/grievance/submit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

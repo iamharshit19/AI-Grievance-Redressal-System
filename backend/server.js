@@ -13,8 +13,8 @@ import announcementRoutes from './routes/announcements.js';
 config();
 const app = express();
 const allowedOrigins = [
-  "http://localhost:5173", // local frontend dev
-  "https://your-frontend-domain.com" // production frontend (once deployed)
+  "http://localhost:5173", 
+  "https://grievance-citizen-portal.vercel.app/" 
 ];
 
 app.use(

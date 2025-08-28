@@ -12,6 +12,8 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
+const API = import.meta.env.VITE_API_URL;
+
 
 const COLORS = ["#23568f", "#FF8042"];
 
@@ -20,7 +22,7 @@ function Statistics() {
   const [departmentData, setDepartmentData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/grievance/stats")
+    fetch(`${API}api/grievance/stats`)
       .then((res) => res.json())
       .then((stats) => {
              const resolvedCount =
