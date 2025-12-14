@@ -15,7 +15,7 @@ import {
 const API = import.meta.env.VITE_API_URL;
 
 
-const COLORS = ["#23568f", "#FF8042"];
+const COLORS = ["#4296f5ff", "#FF8042"];
 
 function Statistics() {
   const [statusData, setStatusData] = useState([]);
@@ -93,7 +93,7 @@ setStatusData([
             <YAxis allowDecimals={false} />
             <Tooltip />
             <Legend />
-            <Bar dataKey="Resolved" fill="#23568f" />
+            <Bar dataKey="Resolved" fill="#4296f5ff" />
             <Bar dataKey="Unresolved" fill="#FF8042" />
           </BarChart>
         </ResponsiveContainer>
