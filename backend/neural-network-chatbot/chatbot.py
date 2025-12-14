@@ -41,13 +41,17 @@ def bag_of_words(sentence):
 def predict_class(sentence):
     bow = bag_of_words(sentence)
     res = model.predict(np.array([bow]))[0]
-    ERROR_THRESHOLD = 0.25
+
+    print("RAW MODEL OUTPUT:", res)
+    print("CLASSES:", classes)
+
+    ERROR_THRESHOLD = 0.3
+
     results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
+
     results.sort(key=lambda x: x[1], reverse=True)
-    return_list = []
-    for r in results:
-        return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
-    return return_list
+    return [{'intent': classes[r[0]], 'probability': str(r[1])} for r in results]
+
 
 def get_response(intents_list, intents_json):
     if not intents_list:
