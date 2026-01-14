@@ -9,19 +9,15 @@ from flask_cors import CORS
 
 import nltk
 from nltk.stem import WordNetLemmatizer
-from tensorflow.keras.models import load_model
-
+from tensorflow.keras.models import load_model99
 nltk.download('punkt')
 nltk.download('wordnet')
-
 app = Flask(__name__)
 CORS(app) 
-
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
-
 words = pickle.load(open('words.pkl', 'rb'))
-classes = pickle.load(open('classes.pkl', 'rb'))
+classes=load_model(open('classes.pkl', 'rb'))
 model = load_model('chatbot_model.h5')
 
 def clean_up_sentence(sentence):

@@ -5,7 +5,7 @@
     "content": "Air pollution levels have reached hazardous limits in several parts of the city. Citizens are advised to limit outdoor activities and use masks when outside.",
     "type": "urgent",
     "audience": "public",
-    "expiryDate": "2025-10-15T00:00:00Z",
+    "expiryDate": "2025-12-01T00:00:00Z",
     "isPinned": true,
     "distributionChannels": {
       "email": true,
@@ -18,7 +18,7 @@
     "author": "Dr. Meera Joshi",
     "authorRole": "Environmental Officer",
     "department": "Pollution Control Board",
-    "timestamp": "2025-10-10T09:00:00Z"
+    "timestamp": "2025-12-10T09:00:00Z"
   },
   {
     "id": "68b054ab5b38fa3b29a80d94",
@@ -26,7 +26,7 @@
     "content": "A free vaccination drive will be conducted in community centers across Ward 7 and Ward 8 on December 12, 2025. Citizens are encouraged to participate.",
     "type": "general",
     "audience": "citizen",
-    "expiryDate": "2025-12-20T00:00:00Z",
+    "expiryDate": "2025-12-01T00:00:00Z",
     "isPinned": false,
     "distributionChannels": {
       "email": true,
