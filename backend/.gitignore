@@ -1,4 +1,8 @@
 .env
+<<<<<<< HEAD
 .env
 node_modules
 venv/
+serviceAccount.json
+=======
+>>>>>>> parent of d443007 (Add .env to gitignore)
